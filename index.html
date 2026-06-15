@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A Very Important Message 🥺</title>
+    <!-- Tailwind CSS for styling -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <!-- Playful Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Fredoka', sans-serif; }
+        
+        /* Custom subtle "big-eye" wiggle animation for maximum cute guilt */
+        @keyframes innocent-wiggle {
+            0%, 100% { transform: rotate(0deg) scale(1); }
+            25% { transform: rotate(1deg) scale(1.02); }
+            75% { transform: rotate(-1deg) scale(1.02); }
+        }
+        .animate-guilt {
+            animation: innocent-wiggle 3s ease-in-out infinite;
+        }
+    </style>
+</head>
+<body class="bg-amber-50 min-h-screen flex flex-col items-center justify-center p-4 relative overflow-hidden">
+
+    <!-- The Interactive Container -->
+    <div class="z-10 bg-white border-4 border-amber-200 rounded-3xl p-8 shadow-2xl max-w-sm w-full text-center">
+        
+        <!-- State 1: The Closed Box -->
+        <div id="closed-box" class="space-y-6">
+            <h1 class="text-2xl font-bold text-amber-900">1 Unread Message 📬</h1>
+            <div class="flex justify-center">
+                <!-- A cute interactive square box matching cat's cream tones -->
+                <div class="w-32 h-32 bg-amber-100 border-4 border-dashed border-amber-300 rounded-2xl flex items-center justify-center shadow-inner animate-pulse">
+                    <span class="text-5xl">📦</span>
+                </div>
+            </div>
+            <button onclick="openBox()" class="bg-amber-500 hover:bg-amber-600 text-white font-bold py-3 px-8 rounded-full shadow-lg transition-all duration-300 transform hover:-translate-y-1 cursor-pointer text-lg tracking-wide">
+                Click to Open ✨
+            </button>
+        </div>
+
+        <!-- State 2: The Apology Message (Hidden by default) -->
+        <div id="open-box" class="hidden space-y-6 animate-fade-in">
+            <h1 class="text-4xl font-extrabold text-amber-900 animate-guilt">I'M SORRY! 🥺</h1>
+            <p class="text-amber-950 text-xl font-medium leading-relaxed bg-amber-100 p-4 rounded-xl shadow-inner border border-amber-200">
+                I'm sorry for being a nuisance... Can you add me back in the group please? I promise to be on my best behavior!
+            </p>
+            <div class="text-sm text-amber-400 italic">✨ Pleading since [Today's Date] ✨</div>
+        </div>
+
+    </div>
+
+    <!-- The Ultimate Weapon of Innocent Guilt: The Wide-Eyed Cat -->
+    <div class="absolute bottom-4 right-4 max-w-[140px] md:max-w-[180px] animate-guilt">
+        <img src="image_0.png" 
+             alt="Super innocent wide-eyed cat" 
+             class="rounded-3xl border-8 border-white shadow-2xl object-cover w-full h-auto">
+        <span class="block text-center text-xs font-bold text-amber-900 mt-2 bg-white/90 backdrop-blur-xs py-1 px-3 rounded-full shadow-md">
+            "i am just a tiny cat... piz unban?"
+        </span>
+    </div>
+
+    <script>
+        function openBox() {
+            // Hide the closed box view
+            document.getElementById('closed-box').classList.add('hidden');
+            // Show the apology view with the cat's full wide-eyed pleading power
+            document.getElementById('open-box').classList.remove('hidden');
+        }
+    </script>
+</body>
+</html>
